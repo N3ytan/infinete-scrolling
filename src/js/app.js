@@ -1,4 +1,5 @@
 const postsContainer = document.querySelector('#posts-container')
+const loaderContainer = document.querySelector('.loader')
 
 let page = 1
 
@@ -21,4 +22,30 @@ const addPostsIntoDOM = async () => {
 }
 
 addPostsIntoDOM()
+
+const getNextPosts = () => {
+   page++
+   addPostsIntoDOM()
+}
+
+const removeLoader = () => {
+   setTimeout(() => {
+      loaderContainer.classList.remove('show')
+      getNextPosts()
+   }, 1000)
+}
+
+const showLoader = () => {
+   loaderContainer.classList.add('show')
+   removeLoader()
+}
+
+window.addEventListener('scroll', () => {
+   const { clientHeight, scrollHeight, scrollTop } = document.documentElement
+   const isPageBottomAlmostReached = scrollTop + clientHeight >= scrollHeight - 10
+
+   if (isPageBottomAlmostReached){
+      showLoader()
+   }
+})
 
