@@ -1,0 +1,2 @@
+# infinete-scrolling
+here is a very interesting project that I developed with master Roger Melo's classes and I wanted to share it with you, it is an infinite scrolling page similar to that of Twitter, it accesses and takes objects from a Fake API to complete the page's posts as soon as the scroll bar reaches the end, in addition it also has a filter that selects the posts with the keywords described in the search engine, when the word is deleted it returns with the posts that had been previously loaded.
